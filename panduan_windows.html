@@ -1,378 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Poly Studio X50 HDMI Screen Sharing</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Poly Studio X50 HDMI Screen Sharing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body{
-      margin:0;
-      font-family:Arial, sans-serif;
-      background:#f4f4f4;
-      color:#1e293b;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f4f4f4;
+  color:#1e293b;
+}
 
-    .navbar{
-      background:#0f172a;
-      color:white;
-      padding:15px 30px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-wrap:wrap;
-    }
+.navbar{
+  background:#0f172a;
+  color:white;
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
 
-    .logo{
-      font-size:20px;
-      font-weight:bold;
-    }
+.logo{
+  font-size:20px;
+  font-weight:bold;
+}
 
-    .menu{
-      display:flex;
-      align-items:center;
-      flex-wrap:wrap;
-    }
+.menu{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+}
 
-    .menu a{
-      color:white;
-      text-decoration:none;
-      margin-left:20px;
-      font-size:15px;
-    }
+.menu a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+}
 
-    .lang-switch{
-      margin-left:20px;
-    }
+.lang-switch button{
+  padding:8px 12px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  margin-left:5px;
+  font-weight:bold;
+}
 
-    .lang-switch button{
-      padding:8px 12px;
-      border:none;
-      border-radius:6px;
-      cursor:pointer;
-      margin-left:5px;
-      font-weight:bold;
-    }
+.container{
+  max-width:900px;
+  margin:30px auto;
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
 
-    .container{
-      max-width:900px;
-      margin:30px auto;
-      background:white;
-      padding:30px;
-      border-radius:15px;
-      box-shadow:0 2px 10px rgba(0,0,0,0.1);
-    }
+.step{
+  background:#f8fafc;
+  border-left:5px solid #2563eb;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+}
 
-    h1,h2,h3{
-      color:#0f172a;
-    }
+.sub-box{
+  background:white;
+  padding:15px;
+  margin-top:15px;
+  border-radius:10px;
+  border:1px solid #e2e8f0;
+}
 
-    ul,ol{
-      line-height:1.8;
-    }
+.diagram{
+  background:#f8fafc;
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+  margin:20px 0;
+}
 
-    .diagram{
-      background:#f8fafc;
-      padding:20px;
-      border-radius:10px;
-      text-align:center;
-      font-size:20px;
-      line-height:2;
-      margin:30px 0;
-      border:1px solid #e2e8f0;
-    }
-
-    .step{
-      background:#f8fafc;
-      border-left:5px solid #2563eb;
-      padding:20px;
-      border-radius:10px;
-      margin-bottom:20px;
-    }
-
-    .sub-box{
-      background:white;
-      padding:15px;
-      margin-top:15px;
-      border-radius:10px;
-      border:1px solid #e2e8f0;
-    }
-
-    footer{
-      text-align:center;
-      background:#0f172a;
-      color:white;
-      padding:20px;
-      margin-top:30px;
-    }
-
-    @media(max-width:768px){
-      .navbar{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
-      .menu{
-        margin-top:15px;
-      }
-
-      .menu a{
-        margin-left:0;
-        margin-right:15px;
-        margin-bottom:10px;
-      }
-
-      .lang-switch{
-        margin-left:0;
-        margin-top:10px;
-      }
-
-      .diagram{
-        font-size:16px;
-      }
-    }
-  </style>
+footer{
+  text-align:center;
+  background:#0f172a;
+  color:white;
+  padding:20px;
+  margin-top:30px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
+<div class="navbar">
+  <div class="logo">IT Division</div>
 
-  <div class="navbar">
+  <div class="menu">
+    <a href="index.html" id="navHome"></a>
+    <a href="polycom.html" id="navPolycom"></a>
+    <a href="access_wifi.html" id="navWifi"></a>
 
-    <div class="logo">
-      IT Division
-    </div>
-
-    <div class="menu">
-
-      <a href="index.html" id="navHome">Home</a>
-      <a href="polycom.html" id="navPolycom">Poly Studio X50 User Guide</a>
-      <a href="access_wifi.html" id="navWifi">How to Connect to Wi-Fi</a>
-
-      <span class="lang-switch">
-        <button onclick="setLanguage('en')">EN</button>
-        <button onclick="setLanguage('id')">ID</button>
-      </span>
-
-    </div>
-
+    <span class="lang-switch">
+      <button onclick="setLanguage('en')">EN</button>
+      <button onclick="setLanguage('id')">ID</button>
+    </span>
   </div>
-
+</div>
 </header>
 
 <div class="container">
 
-  <h1 id="title">
-    📺 How do I share my screen via HDMI?
-  </h1>
+<h1 id="title"></h1>
+<p id="intro"></p>
 
-  <p id="intro">
-    You can share your laptop screen to the meeting room display using the HDMI cable connected to the Poly Studio X50.
-  </p>
+<h2 id="checkTitle"></h2>
+<ul>
+  <li id="check1"></li>
+  <li id="check2"></li>
+  <li id="check3"></li>
+</ul>
 
-  <h2 id="checkTitle">
-    What do I need to check first?
-  </h2>
+<div class="diagram">
+💻 Laptop → 🔌 HDMI → 📹 Poly Studio X50 → 📺 TV
+</div>
 
-  <ul>
-    <li id="check1">
-      Ensure the Poly Studio X50 and TV are turned on.
-    </li>
+<h2 id="stepsTitle"></h2>
 
-    <li id="check2">
-      Ensure the HDMI cable is available and connected to the HDMI port on the meeting room table.
-    </li>
+<div class="step">
+<strong id="step1Title"></strong>
+<p id="step1"></p>
+</div>
 
-    <li id="check3">
-      Prepare your laptop for screen sharing.
-    </li>
-  </ul>
+<div class="step">
+<strong id="step2Title"></strong>
+<p id="step2"></p>
+</div>
 
-  <div class="diagram">
-    💻 Laptop<br>
-    ↓<br>
-    🔌 HDMI Cable<br>
-    ↓<br>
-    📹 Poly Studio X50 System<br>
-    ↓<br>
-    📺 TV / Display
-  </div>
+<div class="step">
+<strong id="step3Title"></strong>
+<p id="step3"></p>
+<img src="img/poly_hdmi.png" style="width:80%;max-width:500px;">
+</div>
 
-  <h2 id="stepsTitle">
-    Steps to Connect
-  </h2>
+<div class="step">
+<strong id="step4Title"></strong>
+<p id="step4"></p>
 
-  <!-- STEP 1 -->
-  <div class="step">
-    <strong>🔌 Step 1</strong><br><br>
+<div class="sub-box">
+<strong id="windowsTitle"></strong>
+<ol>
+<li id="windowsStep1"></li>
+<li id="windowsStep2"></li>
+</ol>
+<ul>
+<li id="duplicate"></li>
+<li id="extend"></li>
+</ul>
+</div>
 
-    <span id="step1">
-      Connect your laptop to the available HDMI port on the meeting room table.
-    </span>
-  </div>
-
-  <!-- STEP 2 -->
-  <div class="step">
-    <strong>⏳ Step 2</strong><br><br>
-
-    <span id="step2">
-      Wait a few seconds for the system to detect your device.
-    </span>
-  </div>
-
-  <!-- STEP 3 -->
-  <div class="step">
-    <strong>📺 Step 3</strong><br><br>
-
-    <span id="step3">
-      Your laptop screen will automatically appear on the TV.
-    </span>
-  </div>
-
-  <!-- STEP 4 -->
-  <div class="step">
-
-    <strong>💻 Step 4</strong><br><br>
-
-    <span id="step4">
-      If the screen does not appear, follow the instructions below:
-    </span>
-
-    <div class="sub-box">
-
-      <strong id="windowsTitle">For Windows</strong>
-
-      <ol>
-        <li id="windowsStep1">Press Windows + P</li>
-        <li id="windowsStep2">Select:</li>
-      </ol>
-
-      <ul>
-        <li id="duplicate">✅ Duplicate – Show the same screen on both displays</li>
-        <li id="extend">✅ Extend – Use the TV as an additional display</li>
-      </ul>
-
-    </div>
-
-    <div class="sub-box">
-
-      <strong id="macTitle">For Mac</strong>
-
-      <ol>
-        <li id="macStep1">Open System Settings</li>
-        <li id="macStep2">Select Displays</li>
-        <li id="macStep3">Enable Mirror Display</li>
-      </ol>
-
-    </div>
-
-  </div>
-
-  <!-- STEP 5 -->
-  <div class="step">
-    <strong>🔌 Step 5</strong><br><br>
-
-    <span id="step5">
-      Disconnect the HDMI cable after your presentation is finished.
-    </span>
-  </div>
-
-  <h2 id="tipsTitle">Tips</h2>
-
-  <ul>
-    <li id="tip1">Use a direct HDMI-to-HDMI cable connection.</li>
-    <li id="tip2">Make sure the cable is connected properly.</li>
-    <li id="tip3">Restart your laptop if the display is not detected.</li>
-  </ul>
+<div class="sub-box">
+<strong id="macTitle"></strong>
+<ol>
+<li id="macStep1"></li>
+<li id="macStep2"></li>
+<li id="macStep3"></li>
+</ol>
+</div>
 
 </div>
 
-<footer>
-  © 2026 IT Division
-</footer>
+<div class="step">
+<strong id="step5Title"></strong>
+<p id="step5"></p>
+</div>
+
+<h2 id="tipsTitle"></h2>
+<ul>
+<li id="tip1"></li>
+<li id="tip2"></li>
+<li id="tip3"></li>
+</ul>
+
+</div>
+
+<footer>© 2026 IT Division</footer>
 
 <script>
-
 function setLanguage(lang){
 
-  const text = {
+const text = {
 
-    en: {
-      navHome: "Home",
-      navPolycom: "Poly Studio X50 User Guide",
-      navWifi: "How to Connect to Wi-Fi",
+en:{
+navHome:"Home",
+navPolycom:"Poly Studio X50 User Guide",
+navWifi:"How to Connect to Wi-Fi",
 
-      title: "📺 How do I share my screen via HDMI?",
-      intro: "You can share your laptop screen to the meeting room display using the HDMI cable connected to the Poly Studio X50.",
+title:"📺 How do I share my screen via HDMI?",
+intro:"You can share your laptop screen to the meeting room display using the HDMI cable connected to the Poly Studio X50.",
 
-      checkTitle: "What do I need to check first?",
-      check1: "Ensure the Poly Studio X50 and TV are turned on.",
-      check2: "Ensure the HDMI cable is available and connected to the HDMI port on the meeting room table.",
-      check3: "Prepare your laptop for screen sharing.",
+checkTitle:"What do I need to check first?",
+check1:"Ensure the Poly Studio X50 and TV are turned on.",
+check2:"Ensure the HDMI cable is connected to the meeting room table.",
+check3:"Prepare your laptop for screen sharing.",
 
-      step1: "Connect your laptop to the available HDMI port on the meeting room table.",
-      step2: "Wait a few seconds for the system to detect your device.",
-      step3: "Your laptop screen will automatically appear on the TV.",
-      step4: "If the screen does not appear, follow the instructions below:",
+stepsTitle:"Steps to Connect",
 
-      windowsTitle: "For Windows",
-      windowsStep1: "Press Windows + P",
-      windowsStep2: "Select:",
-      duplicate: "✅ Duplicate – Show the same screen on both displays",
-      extend: "✅ Extend – Use the TV as an additional display",
+step1Title:"🔌 Step 1",
+step1:"Connect your laptop to the HDMI port on the meeting room table.",
 
-      macTitle: "For Mac",
-      macStep1: "Open System Settings",
-      macStep2: "Select Displays",
-      macStep3: "Enable Mirror Display",
+step2Title:"⏳ Step 2",
+step2:"Wait a few seconds until the system detects your device.",
 
-      step5: "Disconnect the HDMI cable after your presentation is finished.",
+step3Title:"📺 Step 3",
+step3:"Tap Share on the Poly touch panel. Your laptop screen will appear on the TV.",
 
-      tipsTitle: "Tips"
-    },
+step4Title:"💻 Step 4",
+step4:"If the screen does not appear, follow the instructions below:",
 
-    id: {
-      navHome: "Beranda",
-      navPolycom: "Panduan Poly Studio X50",
-      navWifi: "Cara Menghubungkan ke Wi-Fi",
+windowsTitle:"For Windows",
+windowsStep1:"Press Windows + P",
+windowsStep2:"Select:",
+duplicate:"Duplicate – Show the same screen",
+extend:"Extend – Use TV as additional display",
 
-      title: "📺 Bagaimana cara membagikan layar melalui HDMI?",
-      intro: "Anda dapat membagikan layar laptop ke display ruang meeting menggunakan kabel HDMI yang terhubung ke Poly Studio X50.",
+macTitle:"For Mac",
+macStep1:"Open System Settings",
+macStep2:"Select Displays",
+macStep3:"Enable Mirror Display",
 
-      checkTitle: "Apa yang perlu diperiksa terlebih dahulu?",
-      check1: "Pastikan Poly Studio X50 dan TV sudah menyala.",
-      check2: "Pastikan kabel HDMI tersedia dan terhubung ke port HDMI di meja ruang meeting.",
-      check3: "Siapkan laptop Anda untuk berbagi layar.",
+step5Title:"🔌 Step 5",
+step5:"Disconnect the HDMI cable after use.",
 
-      step1: "Hubungkan laptop Anda ke port HDMI yang tersedia di meja ruang meeting.",
-      step2: "Tunggu beberapa detik hingga sistem mendeteksi perangkat Anda.",
-      step3: "Layar laptop akan otomatis tampil pada TV.",
-      step4: "Jika layar belum muncul, ikuti petunjuk berikut:",
+tipsTitle:"Tips",
+tip1:"Use direct HDMI cable",
+tip2:"Ensure cable is properly connected",
+tip3:"Restart laptop if needed"
+},
 
-      windowsTitle: "Untuk Windows",
-      windowsStep1: "Tekan Windows + P",
-      windowsStep2: "Pilih:",
-      duplicate: "✅ Duplicate – Menampilkan layar yang sama pada kedua display",
-      extend: "✅ Extend – Menggunakan TV sebagai layar tambahan",
+id:{
+navHome:"Beranda",
+navPolycom:"Panduan Poly Studio X50",
+navWifi:"Cara Connect Wi-Fi",
 
-      macTitle: "Untuk Mac",
-      macStep1: "Buka System Settings",
-      macStep2: "Pilih Displays",
-      macStep3: "Aktifkan Mirror Display",
+title:"📺 Cara share screen via HDMI",
+intro:"Anda dapat menampilkan layar laptop ke TV menggunakan kabel HDMI pada Poly Studio X50.",
 
-      step5: "Cabut kabel HDMI setelah presentasi selesai.",
+checkTitle:"Yang perlu dicek",
+check1:"Pastikan Poly dan TV menyala",
+check2:"Pastikan kabel HDMI terhubung",
+check3:"Siapkan laptop",
 
-      tipsTitle: "Tips"
-    }
-  };
+stepsTitle:"Langkah-langkah",
 
-  for(const key in text[lang]){
-    const el = document.getElementById(key);
-    if(el) el.innerHTML = text[lang][key];
-  }
+step1Title:"🔌 Langkah 1",
+step1:"Hubungkan laptop ke port HDMI di meja meeting.",
+
+step2Title:"⏳ Langkah 2",
+step2:"Tunggu beberapa detik hingga perangkat terdeteksi.",
+
+step3Title:"📺 Langkah 3",
+step3:"Tekan Share di panel Poly, layar laptop akan tampil di TV.",
+
+step4Title:"💻 Langkah 4",
+step4:"Jika layar belum muncul, ikuti langkah berikut:",
+
+windowsTitle:"Untuk Windows",
+windowsStep1:"Tekan Windows + P",
+windowsStep2:"Pilih:",
+duplicate:"Duplicate – layar sama",
+extend:"Extend – layar tambahan",
+
+macTitle:"Untuk Mac",
+macStep1:"Buka System Settings",
+macStep2:"Pilih Displays",
+macStep3:"Aktifkan Mirror Display",
+
+step5Title:"🔌 Langkah 5",
+step5:"Cabut kabel HDMI setelah selesai.",
+
+tipsTitle:"Tips",
+tip1:"Gunakan kabel HDMI langsung",
+tip2:"Pastikan kabel terpasang dengan benar",
+tip3:"Restart laptop jika tidak muncul"
+}
+};
+
+for(const key in text[lang]){
+  document.getElementById(key).innerHTML = text[lang][key];
+}
 }
 
+// default language
+setLanguage('en');
 </script>
 
 </body>
